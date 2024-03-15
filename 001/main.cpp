@@ -3,14 +3,16 @@ using namespace std;
 
 int main()
 {
-  // tamanho da array
-  double score[] = {8, 7, 10, 8.5};
+  // convertendo string
+ string s1 = "10";
+ string s2 = "20";
 
-  int sizeOfArray = sizeof(score) / sizeof(double) ;
-  
-  for (int i = 0; i < sizeOfArray; i++)
-  {
-    cout << "Score " << i + 1 << " --> " << score[i] << endl;
-  }
-  return 0;
+ int num1, num2;
+
+ num1 = stoi(s1);
+ num2 = stoi(s2);
+ 
+ cout << "Soma:  " << num1 + num2 << endl;
+
+ return 0;
 }
