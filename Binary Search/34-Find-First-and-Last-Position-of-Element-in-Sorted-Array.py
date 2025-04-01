@@ -9,7 +9,7 @@ def binSearch(nums, target, isLeft):
     right = len(nums) -1
     itemFound = -1 
 
-    while left > right:
+    while left <= right:
         mid = (left+right) // 2
         if nums[mid] > target:
             right = mid -1
