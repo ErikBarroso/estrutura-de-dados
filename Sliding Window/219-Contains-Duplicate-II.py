@@ -1,15 +1,13 @@
 def containsNearbyDuplicate(nums, k):
-    counter = {}
-
-    for index ,number in enumerate(nums):
-        if number in counter:
-            if index - counter[number] <= k:
+    lastIndex = {}
+    for index, number in enumerate(nums):
+        if number in lastIndex and index - lastIndex[number] <= k:
                 return True
-        counter[number] = index
+        lastIndex[number] = index
     return False
 
 nums = [1,2,3,1,2,3]
-k = 2
+k = 3
 containsNearbyDuplicate(nums, k)
 
 # Você deve verificar se há dois números duplicados onde a distância entre seus índices é menor ou igual a 3.
