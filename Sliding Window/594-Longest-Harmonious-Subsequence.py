@@ -1,15 +1,14 @@
 def findLHS(nums):
-    subSequence = {}
+    left, right = 0, 0
     subSequenceSize = 0
+    nums.sort()
 
-    for number in nums:
-        if number in subSequence:
-            subSequence[number] += 1
-        else:
-            subSequence[number] = 1
-    for number in subSequence:
-        if number+1 in subSequence:
-            subSequenceSize = max(subSequenceSize, subSequence[number] + subSequence[number+1])
+    for right in range(len(nums)):
+        while nums[right] - nums[left] > 1:
+            left +=1
+        if nums[right] - nums[left] == 1:
+            subSequenceSize = max(subSequenceSize, right - left +1)
+                
     print(subSequenceSize)
     return subSequenceSize
             
